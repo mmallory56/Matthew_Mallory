@@ -15,6 +15,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@react-three/drei": "^9.36.0",
+    "@react-three/fiber": "^8.8.10",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.24.4",
     "gatsby-plugin-image": "^2.24.0",
@@ -25,6 +27,8 @@
     "gatsby-transformer-sharp": "^4.24.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "styled-components": "^5.3.6"
+    "react-icons": "^4.6.0",
+    "styled-components": "^5.3.6",
+    "three": "^0.145.0"
   }
 }
