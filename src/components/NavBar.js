@@ -14,13 +14,36 @@ justify-content:right;
 
 `
 const Item = styled.a`
+ display: inline-block;
+  position: relative;
+  color: #0087ca;
 color: white;
 font-size:20px;
 margin-right:20px;
 text-decoration: none;
+@media (max-width:450px){
+  font-size: 15px;
+}
 &:hover{
-color: lightgrey;
-
+color: white;
+font-size: 22px;
+transition: all .4s ease-in;
+}
+&:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+&:hover:after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 `
 const Menu= styled(AiOutlineMenu)`
@@ -44,15 +67,16 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: center;
-padding: 10px;
+padding: 15px;
  position: absolute;
- right:40px;
- top: 70px;
+ opacity: ${({isOpen})=> isOpen? "1":"0"};
+ right:${({isOpen})=> isOpen? "0px":"0px"};
+ top:${({isOpen})=> isOpen? "40px":"-40px"};
  border-radius: 10px;
  background-color: gray;
  transition: all .8s ease-in-out;
- transform: all .7s ease-in;
- box-shadow: 10px 10px 10px black;
+ 
+ box-shadow: 2px 2px 10px black;
 `
 const BulbFill = styled(AiFillBulb)`
 font-size: 30px;
@@ -68,14 +92,15 @@ const NavBar = (props) => {
         <BulbFill></BulbFill>
         {menu?(<>
         <Close onClick={()=>setMenu(false)}></Close>
-        <MenuBox>
+       </>
+        ):<Menu onClick={()=>setMenu(true)}></Menu>}
+
+        <MenuBox isOpen={menu}>
         <Item href="#Project"> Project</Item>
         <Item href="#Skills">Skills </Item>
-        <Item href="#WorkHistory">Work History</Item>
+        <Item href="#WorkHistory">About</Item>
         <Item href="#Contact">Contact</Item>
-        </MenuBox></>
-        ):<Menu onClick={()=>setMenu(true)}></Menu>}
-       
+        </MenuBox>
         
     </Bar>
   )

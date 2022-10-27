@@ -7,14 +7,14 @@ height:auto;
 color:white;
 border-radius: 10px;
 background-color: grey;
-font-size:30px;
+font-size:20px;
 padding-top: 20px;
 padding-bottom:20px;
 margin-top: 10px;
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 10px 10px 10px darkgray;
+box-shadow: 2px 2px 3px white;
 `
 
 

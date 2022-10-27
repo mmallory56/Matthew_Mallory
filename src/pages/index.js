@@ -15,6 +15,7 @@ import styled from 'styled-components'
 import "../styles/global.css"
 import ScrollToTop from "../components/ScrollToTop"
 import { createContext, useContext,useEffect } from 'react';
+import { Modal } from "../components/Modal"
 
 const ThemeContext = createContext(null);
 
@@ -42,7 +43,15 @@ const pageStyles = {
 const HeadText = styled.h3`
 color:white;
 margin:20px;
-font-size: 40px;
+font-size: 30px;
+@media (max-width: 400px) {
+  font-size: 20px;
+  margin:5px;
+}
+@media (min-width:1000){
+  font-size: 50px;
+}
+
 `
 const SkillBadges = styled.div`
 width: 100%;
@@ -51,19 +60,51 @@ display: grid;
 grid-template-columns: 10% 10% 10% 10%;
 align-items: center;
 justify-content: space-evenly;
-font-size: 100px;
+font-size: 70px;
 color: white;
+
 & svg:hover{
-  font-size: 120px;
+  font-size: 100px;
   color: lightcyan;
   text-shadow: 10px 10px 10px gray;
-  transition: all .5s ease-in
+  transition: all .5s ease-in;
+  &:div:hover{
+    opacity:1;
+  }
 }
+@media (max-width: 400px) {
+  font-size: 40px;
+  margin:5px;
+  & svg:hover{
+    font-size: 60px;
+    color: lightcyan;
+  
+    transition: all .5s ease-in;
+    &:div:hover{
+      opacity:1;
+    }
+  }
+}
+@media (min-width:1000){
+  font-size: 50px;
+}
+`
+const AboutMe = styled.div`
+display:flex;
+justify-content: center;
+width:auto;
+height:auto;
+color: white;
+font-size: 1.5rem;
+background-color:#3f6c61;
+align-items: center;
+padding:50px;
 `
 
 const IndexPage = () => {
   const [isDark, setIsDark] = useState(false);
-
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add("dark");
@@ -96,7 +137,7 @@ const IndexPage = () => {
      <NavBar>
 
      </NavBar>
-     <Message Message="Hi, I'm Matthew Mallory a Web Developer/ Web3 Developer">
+     <Message Message="Hi, I'm Matthew Mallory a Developer">
 
      </Message>
      <Canvas className="reveal"style={{height:"90vh"}}>
@@ -106,14 +147,14 @@ const IndexPage = () => {
       <Scene></Scene>
     </Canvas>
     <section id="Project" className="reveal">
-      <HeadText>
+      <HeadText  className="reveal">
       Projects:
     </HeadText>
     <ProjectBox></ProjectBox>
     </section>
     <section className="reveal" id="Skills" style={{height:"100vh"}} >
       
-    <HeadText>
+    <HeadText className="reveal">
       Skills:
     </HeadText>
       <SkillBadges>
@@ -127,10 +168,13 @@ const IndexPage = () => {
         <SiJavascript/>
       </SkillBadges>
     </section>
-    <section id="WorkHistory"style={{height:"100vh"}}>
+    <section className="reveal" id="WorkHistory"style={{height:"auto"}}>
       <HeadText className="reveal">
       About Me
     </HeadText>
+    <AboutMe>
+    A little bit about me. I have been writing software for about 10 year. I’m currently working as a Developer working on Blockchain integration for VestraVerse. I have over 4 1/2 years experience developing Video games. I have also been coding smart contracts for the last year and half integrating unreal with polygon block chain. I have written block chain contracts that utilize avve protocol for flash loans and exploting arbitrage opertunities. I'm also working on a project to create decentralized software sharing and distribution service. 
+    </AboutMe>
     </section>
     <section className="reveal" id="Contact"style={{height:"100vh",display:"flex",alignItems:"center", justifyContent:"center",backgroundColor:"grey"}}>
     <HeadText>
@@ -141,6 +185,7 @@ const IndexPage = () => {
 
     </section>
     <ScrollToTop></ScrollToTop>
+    <Modal Visible={isModalVisible} setVisible={setIsModalVisible}>Hello World</Modal>
     </main>
     
   )

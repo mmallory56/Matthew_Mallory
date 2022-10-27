@@ -30,5 +30,15 @@
     "react-icons": "^4.6.0",
     "styled-components": "^5.3.6",
     "three": "^0.145.0"
-  }
+  },
+  "main": "gatsby-config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmallory56/Matthew_Mallory.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmallory56/Matthew_Mallory/issues"
+  },
+  "homepage": "https://github.com/mmallory56/Matthew_Mallory#readme"
 }
