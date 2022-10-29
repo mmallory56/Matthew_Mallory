@@ -1,29 +1,63 @@
 import * as React from "react"
 import {SiUnrealengine} from 'react-icons/si'
+
 import {FaUnity,FaReact} from "react-icons/fa"
 import{GrGatsbyjs,GrNode}from 'react-icons/gr'
 import {SiTypescript,SiJavascript} from "react-icons/si"
 import {BsFillBootstrapFill} from 'react-icons/bs'
-import NavBar from "../components/NavBar"
+
+
 import Message from "../components/Message"
 import ProjectBox from "../components/ProjectBox"
-import { useRef, useState,Suspense } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { useLoader } from '@react-three/fiber'
+import { Suspense, useState, useCallback, useEffect, useRef, useMemo,createContext} from 'react'
+import { Canvas, useFrame,SphereBufferGeometryProps,useThree,useLoader,extend} from '@react-three/fiber'
+import { AccumulativeShadows, softShadows, BakeShadows, useHelper, OrbitControls } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import styled from 'styled-components'
 import "../styles/global.css"
 import ScrollToTop from "../components/ScrollToTop"
-import { createContext, useContext,useEffect } from 'react';
+
 import { Modal } from "../components/Modal"
+import IconBar from "../components/IconBar"
+
+import * as THREE from 'three'
+import { Vector3 } from "three"
+
+
+
+
+
+
+
+
+
 
 const ThemeContext = createContext(null);
 
 function Scene() {
+  const mouse = useRef([0, 0])
+  const onMouseMove = useCallback(({ clientX: x, clientY: y }) => (mouse.current = [x - window.innerWidth / 2, y - window.innerHeight / 2]), [])
+  
+  useFrame((state, delta)  => {
+    state.camera.position.x += (state.mouse.x-state.camera.position.x)*.2;
+    state.camera.position.y += (state.mouse.y- state.camera.position.y)*.2;
+    //state.camera.rotation.y = state.mouse.x*.01
+   // state.camera.rotation.x = state.mouse.y*.01
+    state.camera.lookAt(new Vector3(-state.mouse.x*.1,-state.mouse.y*.1,state.mouse.x))
+   // the value will be 0 at scene initialization and grow each frame
+  })
+  const particlesCount = 200
+const positions = new Float32Array(particlesCount * 3)
+for(let i = 0; i < particlesCount; i++)
+{
+    positions[i * 3 + 0] = Math.random()
+    positions[i * 3 + 1] = Math.random()
+    positions[i * 3 + 2] = Math.random()
+}
   const ref = useRef()
   const gltf = useLoader(GLTFLoader, '/trailer.glb')
 
-  useFrame((state, delta) => (ref.current.rotation.y += delta/4))
+  useFrame((state, delta) => (ref.current.rotation.y += delta/20))
   return (
     <Suspense fallback={null}>
       <primitive ref={ref} object={gltf.scene} position={[0,-1.5,-1]} />
@@ -104,8 +138,25 @@ padding:50px;
 const IndexPage = () => {
   const [isDark, setIsDark] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  
+  const [hovered, hover] = useState(false)
+  const [down, set] = useState(false)
+  const mouse = useRef([0, 0])
+  const onMouseMove = useCallback(({ clientX: x, clientY: y }) => (mouse.current = [x - window.innerWidth / 2, y - window.innerHeight / 2]), [])
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+  const cursor={x:0,y:0};
+  cursor.x=0;
+  cursor.y=0;
+ const sizes={width:100,height:100}
+ const CameraRef = useRef()
+
   useEffect(() => {
+    window.addEventListener('mousemove', (event) =>
+    {
+        cursor.x = event.clientX / sizes.width
+        cursor.y = event.clientY / sizes.height
+    
+        console.log(cursor)
+    })
     if (isDark) {
       document.documentElement.classList.add("dark");
     } else {
@@ -113,7 +164,7 @@ const IndexPage = () => {
     }
     function reveal() {
       var reveals = document.querySelectorAll(".reveal");
-    
+     
       for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
@@ -134,18 +185,27 @@ const IndexPage = () => {
   return (
   
     <main style={pageStyles}>
-     <NavBar>
-
-     </NavBar>
-     <Message Message="Hi, I'm Matthew Mallory a Developer">
+     <Message Message="Hi, Matthew Mallory is Full Stack, Unreal Developer">
 
      </Message>
-     <Canvas className="reveal"style={{height:"90vh"}}>
+    
+     <Canvas 
+      pixelRatio={Math.min(2, isMobile ? window.devicePixelRatio : 1)}
+      camera={{ fov: 10, position: [0, 0, 30],ref:{CameraRef} }}
+      onMouseMove={onMouseMove}
+      onMouseUp={() => set(false)}
+      onMouseDown={() => set(true)}
+      onCreated={({ gl }) => {
+        gl.toneMapping = THREE.Uncharted2ToneMapping
+        gl.setClearColor(new THREE.Color('#020207'))}}
+     className="reveal"style={{height:"100vh",position:"fixed"}}>
       <ambientLight intensity={0} />
-   
       
       <Scene></Scene>
     </Canvas>
+     <section id="Home" style={{height:"100vh"}}>
+  
+</section>
     <section id="Project" className="reveal">
       <HeadText  className="reveal">
       Projects:
@@ -168,7 +228,7 @@ const IndexPage = () => {
         <SiJavascript/>
       </SkillBadges>
     </section>
-    <section className="reveal" id="WorkHistory"style={{height:"auto"}}>
+    <section className="reveal" id="About"style={{height:"auto"}}>
       <HeadText className="reveal">
       About Me
     </HeadText>
@@ -180,11 +240,18 @@ const IndexPage = () => {
     <HeadText>
       Contact:
     </HeadText>
+    <div>
+      
+    </div>
+    <div>
+      
+    </div>
     </section>
     <section id="">
 
     </section>
-    <ScrollToTop></ScrollToTop>
+   
+    <IconBar></IconBar>
     <Modal Visible={isModalVisible} setVisible={setIsModalVisible}>Hello World</Modal>
     </main>
     

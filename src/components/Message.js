@@ -2,19 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Box = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
 width: 100%;
 height:auto;
 color:white;
 border-radius: 10px;
-background-color: grey;
+background-color: #ffffff39;
 font-size:20px;
 padding-top: 20px;
 padding-bottom:20px;
 margin-top: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 2px 2px 3px white;
+
+box-shadow: 2px 2px 3px #acacac72;
 `
 
 
