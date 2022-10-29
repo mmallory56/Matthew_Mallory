@@ -166,14 +166,9 @@ const IndexPage = () => {
      </Message>
     
      <Canvas 
-      pixelRatio={Math.min(2, isMobile ? window.devicePixelRatio : 1)}
-      camera={{ fov: 10, position: [0, 0, 30],ref:{CameraRef} }}
-      onMouseMove={onMouseMove}
-      onMouseUp={() => set(false)}
-      onMouseDown={() => set(true)}
-      onCreated={({ gl }) => {
-        gl.toneMapping = THREE.Uncharted2ToneMapping
-        gl.setClearColor(new THREE.Color('#020207'))}}
+     
+      camera={{ fov: 10, position: [0, 0, 30] }}
+      
      className="reveal"style={{height:"100vh",position:"fixed"}}>
       <ambientLight intensity={0} />
       
