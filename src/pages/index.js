@@ -10,26 +10,17 @@ import {BsFillBootstrapFill} from 'react-icons/bs'
 import Message from "../components/Message"
 import ProjectBox from "../components/ProjectBox"
 import { Suspense, useState, useCallback, useEffect, useRef, useMemo,createContext} from 'react'
-import { Canvas, useFrame,SphereBufferGeometryProps,useThree,useLoader,extend} from '@react-three/fiber'
-import { AccumulativeShadows, softShadows, BakeShadows, useHelper, OrbitControls } from '@react-three/drei'
+import { Canvas, useFrame,useLoader} from '@react-three/fiber'
+
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import styled from 'styled-components'
 import "../styles/global.css"
-import ScrollToTop from "../components/ScrollToTop"
 
 import { Modal } from "../components/Modal"
 import IconBar from "../components/IconBar"
 
 import * as THREE from 'three'
 import { Vector3 } from "three"
-
-
-
-
-
-
-
-
 
 
 const ThemeContext = createContext(null);
@@ -138,25 +129,10 @@ padding:50px;
 const IndexPage = () => {
   const [isDark, setIsDark] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [hovered, hover] = useState(false)
-  const [down, set] = useState(false)
-  const mouse = useRef([0, 0])
-  const onMouseMove = useCallback(({ clientX: x, clientY: y }) => (mouse.current = [x - window.innerWidth / 2, y - window.innerHeight / 2]), [])
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
-  const cursor={x:0,y:0};
-  cursor.x=0;
-  cursor.y=0;
- const sizes={width:100,height:100}
- const CameraRef = useRef()
-
+ 
+  
   useEffect(() => {
-    window.addEventListener('mousemove', (event) =>
-    {
-        cursor.x = event.clientX / sizes.width
-        cursor.y = event.clientY / sizes.height
-    
-        console.log(cursor)
-    })
+   
     if (isDark) {
       document.documentElement.classList.add("dark");
     } else {
