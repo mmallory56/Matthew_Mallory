@@ -20,7 +20,7 @@ flex-direction: column;
 position: fixed;
 top:50%;
 right:50%;
-background-color: white;
+background-color:  #4e6c8aa7;
 height:70%;
 width: 70%;
 border-radius: 10px;

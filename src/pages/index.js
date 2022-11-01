@@ -204,7 +204,14 @@ const IndexPage = () => {
       About Me
     </HeadText>
     <AboutMe>
-    A little bit about me. I have been writing software for about 10 year. I’m currently working as a Developer working on Blockchain integration for VestraVerse. I have over 4 1/2 years experience developing Video games. I have also been coding smart contracts for the last year and half integrating unreal with polygon block chain. I have written block chain contracts that utilize avve protocol for flash loans and exploting arbitrage opertunities. I'm also working on a project to create decentralized software sharing and distribution service. 
+    A little bit about Matthew. 
+    Matthew been writing software professionally for about 2 year.
+    He is currently working as a Developer working on Blockchain integration for VestraVerse.
+    Matthew have over 3 years experience developing indie Video games. 
+    Matthew also been coding smart contracts for the last year, integrating unreal with polygon.
+     He has written block chain contracts that utilize avve protocol for flash loans and exploiting arbitrage opportunities.
+     Matthew has developed many websites for small buisness from realestate to ecommerce solutions utilizing React and angular. 
+     Building custom backend solution utilizing Json, Rest, Json webtokens, and other security best practices. 
     </AboutMe>
     </section>
     <section className="reveal" id="Contact"style={{height:"100vh",display:"flex",alignItems:"center", justifyContent:"center",backgroundColor:"grey"}}>
