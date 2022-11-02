@@ -187,14 +187,14 @@ const IndexPage = () => {
     
      <Canvas 
      
-      camera={{ fov: 10, position: [0, 0, 30] }}
+      camera={{ fov: 12, position: [0, 0, 30] }}
       
-     className="reveal"style={{height:"100vh",position:"fixed"}}>
+     style={{height:"100vh",position:"fixed"}}>
       <ambientLight intensity={0} />
       
       <Scene></Scene>
     </Canvas>
-     <section  style={{height:"50vh"}}>
+     <section  style={{height:"60vh"}}>
   
 </section>
     <section id="Project" className="reveal">
