@@ -25,7 +25,7 @@ import ContactForm from "../components/ContactForm"
 
 const ContactSection = styled.section`
   margin: 0;
-  width: 100vw;
+  width: auto;
   height: 100vh;
   background: #ecf0f3e4;
   display: flex;
@@ -180,8 +180,8 @@ const IndexPage = () => {
 
   return (
   
-    <main style={pageStyles}>
-     <Message id="Home" Message="Hi, Matthew Mallory is Full Stack, Unreal Developer">
+    <main  id="Home" style={pageStyles}>
+     <Message  Message="Hi, Matthew Mallory is Full Stack, Unreal Developer">
 
      </Message>
     
