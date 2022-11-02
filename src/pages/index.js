@@ -219,7 +219,7 @@ const IndexPage = () => {
         <SiJavascript/>
       </SkillBadges>
     </section>
-    <section className="reveal" id="About"style={{height:"auto"}}>
+    <section className="reveal" id="About"style={{height:"auto",width:"100%"}}>
       <HeadText className="reveal">
       About Me
     </HeadText>
