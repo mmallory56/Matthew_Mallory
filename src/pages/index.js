@@ -21,7 +21,27 @@ import IconBar from "../components/IconBar"
 
 import * as THREE from 'three'
 import { Vector3 } from "three"
+import ContactForm from "../components/ContactForm"
 
+const ContactSection = styled.section`
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ecf0f3e4;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins;
+  padding-bottom: 50px;
+  padding-top: 100px;
+  margin-bottom: 100px;
+  color: #4b4b4bfd;
+  `
+  
 
 const ThemeContext = createContext(null);
 
@@ -214,17 +234,22 @@ const IndexPage = () => {
      Building custom backend solution utilizing Json, Rest, Json webtokens, and other security best practices. 
     </AboutMe>
     </section>
-    <section className="reveal" id="Contact"style={{height:"100vh",display:"flex",alignItems:"center", justifyContent:"center",backgroundColor:"grey"}}>
-    <HeadText>
-      Contact:
-    </HeadText>
+    <ContactSection className="reveal" id="Contact">
+    <h2 className="reveal">
+      Lets Keep in Touch:
+    </h2>
+      
+    
+    <ContactForm className="reveal">
+
+    </ContactForm>
     <div>
       
     </div>
     <div>
       
     </div>
-    </section>
+    </ContactSection>
     <section id="">
 
     </section>

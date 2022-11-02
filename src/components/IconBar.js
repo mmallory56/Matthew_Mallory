@@ -10,7 +10,7 @@ display: flex;
 align-items: center;
 justify-content: space-evenly;
 flex-direction:row ;
-top: 85%;
+top: 93%;
 left: 50%;
 transform: translate(-50%, -50%);
 border-radius: 100px;
@@ -40,18 +40,18 @@ const IconBar = () => {
   return (
     <Bar>
         <BarIconButton href="#Home">
-            <AiOutlineHome></AiOutlineHome>
+            <AiOutlineHome alt="Home"></AiOutlineHome>
         </BarIconButton>
        
         <BarIconButton href="#Project"> 
-            <BiWrench></BiWrench>
+            <BiWrench alt="Projects"></BiWrench>
         </BarIconButton>
         <BarIconButton href="#Skills">
-        <HiOutlineWrenchScrewdriver></HiOutlineWrenchScrewdriver>
+        <HiOutlineWrenchScrewdriver alt="Skills"></HiOutlineWrenchScrewdriver>
         </BarIconButton> 
         <BarIconButton href="#About"> 
 
-        <AiOutlineQuestionCircle>
+        <AiOutlineQuestionCircle alt="About">
         </AiOutlineQuestionCircle>
 
         </BarIconButton>
