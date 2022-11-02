@@ -79,7 +79,7 @@ background: #ecf0f3;
   height: 120px;
   width:90%;
   font-size: 14px;
-  border-radius: 50px;
+  border-radius: 20px;
   padding-left:30px;
   padding-right:20px;
   margin-top:10px;
