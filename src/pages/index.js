@@ -140,7 +140,7 @@ justify-content: center;
 width:auto;
 height:auto;
 color: white;
-font-size: 1.5rem;
+font-size: 1rem;
 background-color:#3f6c61;
 align-items: center;
 padding:50px;
@@ -181,7 +181,7 @@ const IndexPage = () => {
   return (
   
     <main style={pageStyles}>
-     <Message Message="Hi, Matthew Mallory is Full Stack, Unreal Developer">
+     <Message id="Home" Message="Hi, Matthew Mallory is Full Stack, Unreal Developer">
 
      </Message>
     
@@ -194,7 +194,7 @@ const IndexPage = () => {
       
       <Scene></Scene>
     </Canvas>
-     <section id="Home" style={{height:"100vh"}}>
+     <section  style={{height:"50vh"}}>
   
 </section>
     <section id="Project" className="reveal">
