@@ -33,8 +33,8 @@ const ProjectItem2 = styled.div`
 display: flex;
 align-items: center;
 margin:10px;
-margin-left:40px;
-margin-top: 40px;
+margin-left:20px;
+margin-top: 20px;
 width: 90%;
 height: 200px;
 background-color: black;
@@ -48,10 +48,10 @@ const ProjectImage = styled.img`
 const ProjectBox = () => {
   return (
     <Grid>
-    <ProjectItem Tech={"React.js, Bootstrap, Node.js, Express.js, MongoDB, JavaScript, Google Cloud Storage, App Engine, Paypal"} Image={"./Thriftter.png"} Text={"Thriffter MERN Stack"}></ProjectItem> 
-    <ProjectItem Tech={"Gatsby.js, Stapi CMA, PostgreSql, JavaScript, GraphQL"}Image={"./medinalakerealty.png"} Text={"Gatsby React Commercial Project"}></ProjectItem> 
-    <ProjectItem Image={"./reactivities.png"} Text={"React C# .Net Social Activity Site"} URL={""}></ProjectItem> 
-    <ProjectItem Image={"./PortfolioMatthewMallory.png"} Text={"Gatsby.js Three.js Portfolio"}></ProjectItem> 
+    <ProjectItem Tech={"React.js, Bootstrap, Node.js, Express.js, MongoDB, JavaScript, Google Cloud Storage, App Engine, Paypal"} URL="https://thriftter.com" Image={"./Thriftter.png"} Text={"Thriffter MERN Stack"}></ProjectItem> 
+    <ProjectItem Tech={"Gatsby.js, Stapi CMA, PostgreSql, JavaScript, GraphQL"}Image={"./medinalakerealty.png"}URL="https://medinalake.app" Text={"Gatsby React Commercial Project"}></ProjectItem> 
+    <ProjectItem Image={"./reactivities.png"} Text={"React C# .Net Social Activity Site"} URL={"https://reactivitiesmatthewmallory.herokuapp.com/"}></ProjectItem> 
+    <ProjectItem Image={"./PortfolioMatthewMallory.png"} Text={"Gatsby.js Three.js Portfolio"} URL="/"></ProjectItem> 
     <ProjectItem Image={"./VestraVerse.png"}Text={"Vestra Verse Current Employment"} Tech={"Project Was build with Unreal and Node.js Helped setup the development enviroment programmed animations nft smart contracts, Developed Character Controller"}/>
     <ProjectItem Tech={"Gatsby.js, Stapi CMA, PostgreSql, JavaScript, GraphQL"}Image={"./medinalakerealty.png"} Text={"Front End Framework Typescript Project"}></ProjectItem> 
     </Grid>

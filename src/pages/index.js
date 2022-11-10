@@ -71,7 +71,7 @@ for(let i = 0; i < particlesCount; i++)
   useFrame((state, delta) => (ref.current.rotation.y += delta/20))
   return (
     <Suspense fallback={null}>
-      <primitive ref={ref} object={gltf.scene} position={[0,-1.5,-1]} />
+      <primitive ref={ref} object={gltf.scene} position={[0,-.4,-1]} />
     </Suspense>
   )
 }
@@ -143,7 +143,12 @@ color: white;
 font-size: 1rem;
 background-color:#3f6c61;
 align-items: center;
-padding:50px;
+padding:20px;
+
+font-size: 30px;
+@media (max-width: 400px) {
+padding:5px
+}
 `
 
 const IndexPage = () => {
@@ -187,7 +192,7 @@ const IndexPage = () => {
     
      <Canvas 
      
-      camera={{ fov: 12, position: [0, 0, 30] }}
+      camera={{ fov: 42, position: [0, 0, -10] }}
       
      style={{height:"100vh",position:"fixed"}}>
       <ambientLight intensity={0} />

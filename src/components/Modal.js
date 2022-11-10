@@ -21,8 +21,8 @@ position: fixed;
 top:50%;
 right:50%;
 background-color:  #4e6c8aa7;
-height:70%;
-width: 70%;
+height:auto;
+width: min(100%,1000px);
 border-radius: 10px;
 transform: translate(50%,-50%);
 color: black;
@@ -30,22 +30,23 @@ color: black;
 const Button = styled.div`
 margin-top: 5px;
 margin-bottom: 5px;
-color: black;
+color: #b5b5b5f4;
 padding-left: 10px;
 padding-right: 10px;
 padding-top: 5px;
 padding-bottom:5px;
 font-size: 20px;
-border-color: black;
+border-color: rgba(0,0,0,0);
 border-width: 1px;
 border-radius: 10px;
 border-style: solid;
 transition: all .6s;
 &:hover{
     box-shadow: 10px 10px 10x gray;
+    background-color: white;
 }
 &:active{
-    background-color: blue;
+    background-color: white;
     box-shadow: inset 1px 1px 5px gray;
 
 }

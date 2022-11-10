@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import { Modal } from './Modal'
 import {AiFillGithub} from "react-icons/ai"
 const ProjectBox = styled.div`
-width: 90%;
-height: 90%;
+width: auto;
+height: auto;
 
 background-color:  #073d73ec;
 position: relative;
-box-shadow: 5px 5px 5px gray;
+box-shadow: 3px 3px 5px #000000d9;
 background-image: url(${props =>props.Image|| "./Thriftter.png"});
-margin:10px;
+margin:3px;
 background-repeat: no-repeat;
 background-size: cover;
 border-radius: 10px;
@@ -37,7 +37,7 @@ font-size: 25px;
 }
 `
 const ModalItem = styled.div`
-width:80%;
+width:auto;
 height: 80%;
 padding:10px;
 display: flex;
@@ -54,7 +54,7 @@ border-radius: 10px;
 margin-bottom: 5%;
 box-shadow: 2px 5px 10px black;
 `
-const ProjectItem = ({children,Text,Image,Tech}) => {
+const ProjectItem = ({children,Text,Image,Tech,URL}) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <> 
@@ -62,8 +62,8 @@ const ProjectItem = ({children,Text,Image,Tech}) => {
     <Modal Visible={isModalVisible} setVisible={setIsModalVisible}>
       <>
     <ModalItem>
-      <a href='https://vestraverse.io/' style={{width:"70%",height:"40%",paddingBottom:"20px"}}>
-    <ModalImage src={Image} href="https://vestraverse.io/"/>
+      <a href={URL} style={{width:"70%",height:"40%",paddingBottom:"20px"}}>
+    <ModalImage src={Image} href={URL}/>
     </a>
     Tech: {Tech}
     <div><AiFillGithub></AiFillGithub></div>
