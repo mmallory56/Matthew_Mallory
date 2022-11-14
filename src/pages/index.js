@@ -120,7 +120,7 @@ animation: animate 9s linear infinite;
 animation-direction: alternate-reverse;
 transition: filter 2s ease-in-out;
 
-;
+
 @keyframes animate {
   0%   {filter: drop-shadow( 0 0 10px #121f83) drop-shadow( 0 0 20px #01148e)
 drop-shadow( 0 0 30px #001c82) drop-shadow( 0 0 35px #0062ff) }
@@ -138,16 +138,24 @@ animation-delay: 3s;
 }
 
 }
-
-& svg:hover{
-  font-size: 100px;
- 
+& .tooltiptext{
+  position:fixed;
+  visibility:hidden;
+  color:white;
+  font-size:12px;
+  background-color:grey;
+  padding: 4px;
+  border-radius:10px;
+  opacity: 0;
+  transform: translate(100%, -60px);
+  transition: all 1s ease-in-out;
+}
+& .tooltip:hover .tooltiptext {
   
-  transition: all .5s ease-in;
-  &:div:hover{
-    opacity:1;
-  }
-
+ 
+  visibility:visible;
+  opacity: 1;
+  transform: translate(70%, -120px);
 } 
 
 @media (max-width: 400px) {
@@ -247,14 +255,41 @@ const IndexPage = () => {
       Skills:
     </HeadText>
       <SkillBadges>
-        <SiUnrealengine></SiUnrealengine>
-        <FaUnity/>
+        <div className="tooltip">
+          <SiUnrealengine></SiUnrealengine>
+          <div className="tooltiptext">Unreal Engine</div>
+        </div>
+        <div className="tooltip">
+          <FaUnity/>
+          <div className="tooltiptext">Unity Engine</div>
+        </div>
+        <div className="tooltip">
         <FaReact/>
+          <div className="tooltiptext">React</div>
+        </div>
+        <div className="tooltip">
         <GrGatsbyjs/>
+          <div className="tooltiptext">Gatsbyjs</div>
+        </div>
+
+
+        <div className="tooltip">
         <GrNode/>
+          <div className="tooltiptext">Nodejs</div>
+        </div>
+        <div className="tooltip">
         <BsFillBootstrapFill/>
+          <div className="tooltiptext">Bootstrap</div>
+        </div>
+        <div className="tooltip">
         <SiTypescript/>
+          <div className="tooltiptext">Typescript</div>
+        </div>
+        <div className="tooltip">
         <SiJavascript/>
+          <div className="tooltiptext">Javascript</div>
+        </div>
+        
       </SkillBadges>
     </section>
     <section className="reveal" id="About"style={{height:"auto",width:"100%"}}>
