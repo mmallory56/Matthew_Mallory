@@ -33,16 +33,11 @@ transition: filter 2s ease-in-out;
 margin-top: 50px;
 
 @keyframes animate {
-  0%   {filter: drop-shadow( 0 0 10px #121f83) drop-shadow( 0 0 20px #01148e)
-drop-shadow( 0 0 30px #001c82) drop-shadow( 0 0 35px #0062ff) }
-  25%  {filter: drop-shadow( 0 0 10px #ff0000) drop-shadow( 0 0 20px #8e0101)
-drop-shadow( 0 0 30px #000082) drop-shadow( 0 0 35px #ff0000)}
-  50%  {filter: drop-shadow( 0 0 10px #ff0000) drop-shadow( 0 0 20px #01688e)
-drop-shadow( 0 0 30px #004a3e) drop-shadow( 0 0 35px #004d50) }
-  75%  {filter: drop-shadow( 0 0 10px #005a4e) drop-shadow( 0 0 20px #004461)
-drop-shadow( 0 0 30px #006482) drop-shadow( 0 0 35px #ff00e1) }
-  100% {filter: drop-shadow( 0 0 10px #f700ff) drop-shadow( 0 0 20px #87018e)
-drop-shadow( 0 0 30px #820000) drop-shadow( 0 0 350px #ff0000) }
+  0%   {filter: drop-shadow( 0 0 35px #0062ff) }
+  25%  {filter: drop-shadow( 0 0 35px #ff0000)}
+  50%  {filter: drop-shadow( 0 0 35px #004d50) }
+  75%  {filter:  drop-shadow( 0 0 35px #ff00e1) }
+  100% {filter:  drop-shadow( 0 0 350px #ff0000) }
 }
 @media (max-width: 450px){
     font-size: 20px;
