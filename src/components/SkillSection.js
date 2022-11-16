@@ -8,10 +8,12 @@ import {SiTypescript,SiJavascript} from "react-icons/si"
 import {BsFillBootstrapFill} from 'react-icons/bs'
 
 const SkillBadges = styled.div`
-width: 100%;
-height: 90%;
+width: auto;
+height: auto;
+
+
 display: grid;
-grid-template-columns: 10% 10% 10% 10%;
+grid-template-columns: 10% 10% 10% 10% 10%;
 align-items: center;
 justify-content: space-evenly;
 font-size: 60px;
@@ -24,11 +26,11 @@ color: #ffffffff;
 
 
 border-radius: 29px; padding: 11px 19px;
-margin: 0 40px;
+
 animation: animate 9s linear infinite; 
 animation-direction: alternate-reverse;
 transition: filter 2s ease-in-out;
-
+margin-top: 50px;
 
 @keyframes animate {
   0%   {filter: drop-shadow( 0 0 10px #121f83) drop-shadow( 0 0 20px #01148e)
@@ -42,10 +44,13 @@ drop-shadow( 0 0 30px #006482) drop-shadow( 0 0 35px #ff00e1) }
   100% {filter: drop-shadow( 0 0 10px #f700ff) drop-shadow( 0 0 20px #87018e)
 drop-shadow( 0 0 30px #820000) drop-shadow( 0 0 350px #ff0000) }
 }
+@media (max-width: 450px){
+    font-size: 20px;
+  }
+
+}
 & svg :nth-of-type(2n + 1){
 animation-delay: 3s;
-}
-
 }
 & .tooltiptext{
   position:fixed;
@@ -58,6 +63,7 @@ animation-delay: 3s;
   opacity: 0;
   transform: translate(100%, -60px);
   transition: all 1s ease-in-out;
+  
 }
 & .tooltip:hover .tooltiptext {
   
@@ -68,8 +74,11 @@ animation-delay: 3s;
 } 
 
 @media (max-width: 400px) {
-  font-size: 40px;
+  
   margin:5px;
+  & svg{
+    font-size: 20px;
+  }
   & svg:hover{
     font-size: 60px;
     color: lightcyan;

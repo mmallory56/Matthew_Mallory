@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ProjectItem from './ProjectItem'
 import { useContext } from 'react';
 const Grid = styled.div`
-width:100%;
+width:auto;
 height:60vw;
 display: grid;
 grid-template-columns: 33% 33% 33%;

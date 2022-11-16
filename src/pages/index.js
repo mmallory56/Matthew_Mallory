@@ -155,7 +155,7 @@ const IndexPage = () => {
      
      camera={{ fov: 42, position: [0, 0, -10] }}
      
-    style={{height:"100vh",position:"fixed"}}>
+    style={{width:"100%",height:"100vh",position:"fixed"}}>
      <ambientLight intensity={0} />
      
      <Scene></Scene>

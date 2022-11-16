@@ -15,7 +15,7 @@ left: 50%;
 transform: translate(-50%, -50%);
 border-radius: 100px;
 background-color: #073d73ec;
-width:300px;
+width:200px;
 padding:8px;
 `
 const BarIconButton = styled.a`
