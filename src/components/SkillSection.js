@@ -13,7 +13,7 @@ height: auto;
 
 
 display: grid;
-grid-template-columns: 10% 10% 10% 10% 10%;
+grid-template-columns: 10% 10% 10% 10%;
 align-items: center;
 justify-content: space-evenly;
 font-size: 60px;
@@ -74,7 +74,7 @@ animation-delay: 3s;
 } 
 
 @media (max-width: 400px) {
-  
+  grid-template-columns: 10% 10% 10% ;
   margin:5px;
   & svg{
     font-size: 20px;
